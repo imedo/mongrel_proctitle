@@ -59,7 +59,7 @@ Installation
 This version of the plugin is packaged specifically as a Mongrel GemPlugin. Install 
 using:
 
-   gem install mongrel_proctitle --source=http://tomayko.com
+   gem install mongrel_proctitle
 
 Once installed, all new mongrels will automatically load the plugin during startup. If
 you would prefer to control which mongrels load the plugin, do not install this gem.
