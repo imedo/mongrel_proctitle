@@ -10,7 +10,6 @@ module Mongrel
       @prefix = prefix
       @port = port
       @mutex = Mutex.new
-      @titles = []
       @request_threads = []
       @queue_length = 0
       @request_count = 0
@@ -32,10 +31,9 @@ module Mongrel
     end
 
     def request(&block)
-      titles, mutex = @titles, @mutex
+      mutex = @mutex
       mutex.synchronize do
         @queue_length += 1
-        titles.push(self.title)
       end
       begin
         yield
